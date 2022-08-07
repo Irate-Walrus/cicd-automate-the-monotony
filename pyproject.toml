@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "cicd-automate-the-monotony"
+version = "0.1.0"
+description = "Example application for presentation \"CI/CD - Automated The Monotony\" for Monash University"
+authors = ["irate-walrus"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+black = "^22.6.0"
+flake8 = "^5.0.4"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
