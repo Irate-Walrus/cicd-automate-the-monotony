@@ -26,3 +26,12 @@ archive.zip
 
 # sqlite testing db
 *.db
+
+# tox testing enironments
+.tox
+
+# pytest benchmarking
+.benchmarks
+
+# ignore .env
+.env
