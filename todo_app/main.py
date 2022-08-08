@@ -6,10 +6,13 @@ from fastapi import Depends, FastAPI, HTTPException, status
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from . import crud
+from .config import settings
 from .database import async_session, init_db
 from .schemas import Todo, TodoCreate, TodoUpdate
 
-app = FastAPI()
+app = FastAPI(
+    title=settings.project_name, description=settings.description, debug=settings.debug
+)
 
 
 @app.on_event("startup")
@@ -43,14 +46,14 @@ async def add(todo: TodoCreate, db: AsyncSession = Depends(get_db)) -> Todo:
     return await crud.create_todo(db, todo)
 
 
-@app.put("/todos/{todo_id}", response_model=Todo)
+@app.patch("/todos/{todo_id}", response_model=Todo)
 async def update(
     todo_id: UUID, todo: TodoUpdate, db: AsyncSession = Depends(get_db)
 ) -> Todo:
     return await crud.update_todo(db, todo_id, todo)
 
 
-@app.delete("/todos")
+@app.delete("/todos/{todo_id}")
 async def delete(todo_id: UUID, db: AsyncSession = Depends(get_db)) -> int:
     await crud.delete_todo(db, todo_id)
     return status.HTTP_200_OK
