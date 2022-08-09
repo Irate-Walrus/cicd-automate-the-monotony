@@ -6,7 +6,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: todo-app
+  IMAGE_NAME: ${{ github.repository }}-todo-app
 
 jobs:
   build-and-push-image:
