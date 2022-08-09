@@ -1,12 +1,10 @@
 from pydantic import BaseSettings
 
-
 class Settings(BaseSettings):
     # Base
-    debug: bool
-    project_name: str
-    version: str
-    description: str
+    debug: bool = False
+    project_name: str = "cicd-automate-the-monotony-todo-api"
+    description: str = "Example application for presentation \"CI/CD - Automated The Monotony\" for Monash University"
 
     # Database
     db_async_connection_str: str
