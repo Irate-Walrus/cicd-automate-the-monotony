@@ -43,4 +43,4 @@ jobs:
       run: poetry install --no-interaction --dev
 
     - name: Run tests
-      run: poetry run pytest --cov=todo_app
+      run: poetry run tox
