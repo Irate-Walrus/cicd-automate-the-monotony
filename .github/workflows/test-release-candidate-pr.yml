@@ -2,10 +2,6 @@ name: test-release-candidate-pr
 
 on:
   pull_request:
-    types: 
-      - "opened"
-      - "edited"
-      - "reopened"
     branches:
       - "rc*"
       - "main"
