@@ -1,0 +1,46 @@
+name: test-release-candidate-pr
+
+on:
+  pull_request:
+    branches:
+      - "rc*"
+    paths:
+      - 'src/*'
+
+jobs:
+  build:
+    strategy:
+        matrix:
+          os: [ubuntu-latest, windows-latest]
+          python-version: ['3.9', '3.10', 'pypy3.9']
+    runs-on: ${{ matrix.os }}
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        version: "1.1.14"
+        virtualenvs-in-project: true
+
+    - name: Set up cache
+      uses: actions/cache@v2
+      id: cache
+      with:
+        path: .venv
+        key: venv-${{ runner.os }}-py-${{ matrix.python-version }}-poetry-${{ hashFiles('poetry.lock') }}
+
+    - name: Ensure cache is healthy
+      if: steps.cache.outputs.cache-hit == 'true'
+      run: poetry run pip --version >/dev/null 2>&1 || rm -rf .venv
+
+    - name: Install dependencies
+      run: poetry install --no-interaction --dev
+
+    - name: Run tests
+      run: poetry run pytest --cov=todo_app
