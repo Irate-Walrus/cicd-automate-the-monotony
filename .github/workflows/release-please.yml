@@ -14,4 +14,3 @@ jobs:
         with:
           release-type: python
           package-name: ${{env.ACTION_NAME}}
-          token: ${{ secrets.RELEASE_BOT_TOKEN }}
