@@ -9,9 +9,6 @@ python = "^3.9"
 fastapi = "^0.79.0"
 uvicorn = {extras = ["standard"], version = "^0.18.2"}
 SQLAlchemy = "^1.4.39"
-pytest-asyncio = "^0.19.0"
-httpx = "^0.23.0"
-tox = "^3.25.1"
 gunicorn = { version = "^20.1.0", optional = true }
 asyncpg = "^0.26.0"
 
@@ -23,6 +20,9 @@ aiosqlite = "^0.17.0"
 pytest = "^7.1.2"
 pytest-cov = "^3.0.0"
 pytest-benchmark = "^3.4.1"
+pytest-asyncio = "^0.19.0"
+httpx = "^0.23.0"
+tox = "^3.25.1"
 
 [tool.poetry.extras]
 container = ["gunicorn"]
