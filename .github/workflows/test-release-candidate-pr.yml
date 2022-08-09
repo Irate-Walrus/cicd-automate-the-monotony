@@ -48,4 +48,10 @@ jobs:
       run: poetry install --no-interaction
 
     - name: Run tests
+      env:
+        DEBUG: "True"
+        PROJECT_NAME: "Todo Api"
+        VERSION: "0.1.0"
+        DESCRIPTION: "The API for Todo app."
+        DB_ASYNC_CONNECTION_STR: "sqlite+aiosqlite:///./test_todo.db"
       run: poetry run tox
