@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cicd-automate-the-monotony"
-version = "0.3.0"
+version = "0.4.0"
 description = "Example application for presentation \"CI/CD - Automated The Monotony\" for Monash University"
 authors = ["irate-walrus"]
 
