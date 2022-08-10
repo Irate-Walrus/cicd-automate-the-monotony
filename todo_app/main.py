@@ -25,9 +25,11 @@ async def get_db():
     async with async_session() as session:
         yield session
 
+
 @app.get("/")
 async def root() -> status.HTTP_200_OK:
     return status.HTTP_200_OK
+
 
 @app.get("/todos", response_model=List[Todo])
 async def get_all(db: AsyncSession = Depends(get_db)) -> List[Todo]:
