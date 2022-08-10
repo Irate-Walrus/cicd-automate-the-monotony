@@ -5,7 +5,7 @@ class Settings(BaseSettings):
     # Base
     debug: bool = False
     project_name: str = "Todo Api"
-    description: str = "Example application for presentation \"CI/CD - Automated The Monotony\" for Monash University"
+    description: str = 'Example application for presentation "CI/CD - Automated The Monotony" for Monash University'
 
     # Database
     db_async_connection_str: str
