@@ -25,6 +25,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: prod
     if: ${{ contains(github.ref_name, 'main') }}
+    env:
+      TF_VAR_environment: prod
 
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
@@ -65,7 +67,9 @@ jobs:
     runs-on: ubuntu-latest
     environment: dev
     if: ${{ contains(github.ref_name, 'rc') }}
-
+    env:
+      TF_VAR_environment: dev
+    
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
