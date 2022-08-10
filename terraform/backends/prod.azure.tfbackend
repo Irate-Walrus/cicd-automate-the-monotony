@@ -1,0 +1,4 @@
+resource_group_name  = "rg-todo-prod-ause"
+storage_account_name = "sttodoprodause"
+container_name       = "tfstate"
+key                  = "todo.prod.ause.tfstate"
