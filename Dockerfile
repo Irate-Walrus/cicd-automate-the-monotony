@@ -15,7 +15,7 @@ ENV PATH="${PATH}:/root/.poetry/bin"
 RUN pip install --upgrade pip setuptools wheel
 
 # install requirements
-RUN poetry export -f requirements.txt --without-hashes --output requirements.txt --extras container --dev
+RUN poetry export -f requirements.txt --without-hashes --output requirements.txt --extras container
 RUN pip install --prefix=/install -r requirements.txt
 
 FROM --platform=$BUILDPLATFORM python:3.9-slim-bullseye
