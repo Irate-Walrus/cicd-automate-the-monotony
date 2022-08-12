@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2](https://github.com/Irate-Walrus/cicd-automate-the-monotony/compare/v0.1.1...v0.1.2) (2022-08-12)
+
+
+### Documentation
+
+* readme and presentation pdf ([77aa626](https://github.com/Irate-Walrus/cicd-automate-the-monotony/commit/77aa626439918a5e94047a77d710a2705bfcec16))
+
 ## [0.1.1](https://github.com/Irate-Walrus/cicd-automate-the-monotony/compare/v0.1.0...v0.1.1) (2022-08-11)
 
 
