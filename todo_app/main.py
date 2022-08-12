@@ -31,6 +31,11 @@ async def root() -> status.HTTP_200_OK:
     return status.HTTP_200_OK
 
 
+@app.get("/test")
+async def test() -> str:
+    return "This is a test route to test automatic deployment"
+
+
 @app.get("/todos", response_model=List[Todo])
 async def get_all(db: AsyncSession = Depends(get_db)) -> List[Todo]:
     return await crud.get_todos(db)
