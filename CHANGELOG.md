@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/Irate-Walrus/cicd-automate-the-monotony/compare/v0.1.2...v0.2.0) (2022-08-12)
+
+
+### Features
+
+* add new /test route to todo_app ([0a0ddfd](https://github.com/Irate-Walrus/cicd-automate-the-monotony/commit/0a0ddfd58d7117446c84653db005af005e3a4c4f))
+
 ## [0.1.2](https://github.com/Irate-Walrus/cicd-automate-the-monotony/compare/v0.1.1...v0.1.2) (2022-08-12)
 
 
