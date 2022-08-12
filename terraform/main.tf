@@ -79,7 +79,7 @@ resource "azurerm_linux_web_app" "api" {
     DOCKER_REGISTRY_SERVER_PASSWORD     = var.container_registry_password
     DB_ASYNC_CONNECTION_STR             = "sqlite+aiosqlite:///./test_todo.db"
     WEBSITES_PORT                       = 8000
-    A_ENV_VARIABLE = "seomthing"
+    A_ENV_VARIABLE                      = "seomthing"
   }
 
   identity {
